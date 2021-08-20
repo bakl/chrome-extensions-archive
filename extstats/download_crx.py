@@ -4,11 +4,13 @@ import os.path
 import sys
 
 # DOWNLOAD_URL = "https://clients2.google.com/service/update2/crx?response=redirect&os=cros&prodversion=9999&x=id%3D{ID}%26uc"
-DOWNLOAD_URL = "https://clients2.google.com/service/update2/crx?response=redirect&os=cros&arch=x86-64&nacl_arch=x86-64&prod=chromiumcrx&prodchannel=unknown&prodversion=9999&x=id%3D{ID}%26uc"
+# DOWNLOAD_URL = "https://clients2.google.com/service/update2/crx?response=redirect&os=cros&arch=x86-64&nacl_arch=x86-64&prod=chromiumcrx&prodchannel=unknown&prodversion=9999&x=id%3D{ID}%26uc"
+DOWNLOAD_URL = "https://clients2.google.com/service/update2/crx?response=redirect&os=mac&arch=x64&os_arch=x86_64&nacl_arch=x86-64&prod=chromecrx&prodchannel=&prodversion=92.0.4515.131&lang=ru&acceptformat=crx3&x=id%3D{ID}%26installsource%3Dondemand%26uc"
 DESTINATION = "{ID}.crx"
 
 
 def down(ext_id, filename):
+    print(DOWNLOAD_URL.format(ID=ext_id))
     urllib.request.urlretrieve(DOWNLOAD_URL.format(ID=ext_id), filename)
 
 
